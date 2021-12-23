@@ -43,20 +43,20 @@ public class Util_OutputThread extends Thread {
 							switch (choose) {
 							case "/Cal":
 								String resultCal = mainUtil.calculator(message);
-								dataOutputStream.writeUTF("Calculator Result - " + resultCal);
+								dataOutputStream.writeUTF("Calculator Result : " + resultCal);
 								break;
 							case "/Cov":
 								String resultCov = mainUtil.convertor(message);
-								dataOutputStream.writeUTF("Convertor Result - " + resultCov);
+								dataOutputStream.writeUTF("Convertor Result : " + resultCov);
 								break;
 							case "/Cap":
 								String resultCap = mainUtil.capital(message);
-								dataOutputStream.writeUTF("Capital Result - " + resultCap);
+								dataOutputStream.writeUTF("Capital Result : " + resultCap);
 								break;
 							case "/Hel":
 								if (message.substring(1, 5).equals("Help")) {
 									String resultHelp = mainUtil.help();
-									dataOutputStream.writeUTF("Help Result - " + resultHelp);
+									dataOutputStream.writeUTF("Help Result : " + resultHelp);
 									break;									
 								}
 							default:

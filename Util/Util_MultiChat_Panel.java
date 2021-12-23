@@ -75,20 +75,20 @@ public class Util_MultiChat_Panel extends JPanel {
 							switch (choose) {
 							case "/Cal":
 								String resultCal = mainUtil.calculator(sendMessage);
-								txaResult.setText(txaResult.getText() + "\nCalculator Result - " + resultCal);
+								txaResult.setText(txaResult.getText() + "\nCalculator Result : " + resultCal);
 								break;
 							case "/Cov":
 								String resultCov = mainUtil.convertor(sendMessage);
-								txaResult.setText(txaResult.getText() + "\nConvertor Result - " + resultCov);
+								txaResult.setText(txaResult.getText() + "\nConvertor Result : " + resultCov);
 								break;
 							case "/Cap":
 								String resultCap = mainUtil.capital(sendMessage);
-								txaResult.setText(txaResult.getText() + "\nCapital Result - " + resultCap);
+								txaResult.setText(txaResult.getText() + "\nCapital Result : " + resultCap);
 								break;
 							case "/Hel":
 								if (sendMessage.substring(1, 5).equals("Help")) {
 									String resultHelp = mainUtil.help();
-									txaResult.setText(txaResult.getText() + "\nHelp Result - " + resultHelp);
+									txaResult.setText(txaResult.getText() + "\nHelp Result : " + resultHelp);
 									break;									
 								}
 							default:

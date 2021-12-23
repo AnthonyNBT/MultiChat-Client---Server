@@ -1,11 +1,21 @@
 package Util;
 
 import java.util.Arrays;
+import Calculator.Calculator;
+import Convertor.Convertor;
 
 public class Util_MainUtil {
+	private Calculator calculate;
+	private Convertor convert;
+	
+	public Util_MainUtil() {
+		this.calculate = new Calculator();
+		this.convert = new Convertor();
+	}
+	
 	public String calculator(String message) {
-		String result = "Sai cu phap ; Cu phap dung: /Cal <add/sub/mul/div> Num1 Num2";
-		String[] operation = {"add", "sub", "mul", "div"};
+		String result = "Sai cu phap ; Cu phap dung: /Cal <add/sub/mul/div/pow> Num1 Num2";
+		String[] operation = {"add", "sub", "mul", "div", "pow"};
 		String[] handle = message.split(" ");
 		
 		if (handle.length == 4) {
@@ -16,7 +26,7 @@ public class Util_MainUtil {
 					num1 = Double.parseDouble(handle[2]);
 					num2 = Double.parseDouble(handle[3]);
 					
-					result = "Calculator True";
+					result = calculate.calculatorAll(handle[1], num1, num2);
 				} catch (NumberFormatException ex) { }
 			}
 		}
@@ -34,12 +44,7 @@ public class Util_MainUtil {
 					result = "Convertor Duplicate";
 				}
 				else {
-					double num;
-					try {
-						num = Double.parseDouble(handle[3]);
-						
-						result = "Convertor True";
-					} catch (NumberFormatException ex) { }					
+					result = convert.convertorAll(handle[1], handle[2], handle[3]);		
 				}
 			}
 		}
@@ -73,6 +78,7 @@ public class Util_MainUtil {
 				+ "\n\t\t sub - Phep tru"
 				+ "\n\t\t mul - Phep nhan"
 				+ "\n\t\t div - Phep chia"
+				+ "\n\t\t pow - Phep lay mu"
 				+ "\n\t Cov - Converter Ham dung de chuyen doi co so"
 				+ "\n\t\t dec - So thap phan"
 				+ "\n\t\t bin - So nhi phan"
